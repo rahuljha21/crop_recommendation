@@ -1,6 +1,7 @@
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
 import seaborn as sns
 from sklearn.ensemble import  RandomForestClassifier
 import streamlit as st
@@ -28,8 +29,8 @@ data=user()
 st.subheader('User Input Parameter')
 st.write(data)
 model=pd.read_csv("https://raw.githubusercontent.com/dphi-official/Datasets/master/crop_recommendation/train_set_label.csv")
-x=train.drop('crop',axis=1)
-y=train['crop']
+x=model.drop('crop',axis=1)
+y=model['crop']
 
 
 encode=LabelEncoder()
